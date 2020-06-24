@@ -5,6 +5,8 @@ import { getCart } from "./cartHelpers";
 import Card from "./Card";
 import Checkout from "./Checkout";
 
+import Navbar from './Menu'
+
 const Cart = () => {
     const [items, setItems] = useState([]);
 
@@ -37,11 +39,8 @@ const Cart = () => {
     );
 
     return (
-        <Layout
-            title="Shopping Cart"
-            description="Manage your cart items. Add remove checkout or continue shopping."
-            className="container-fluid"
-        >
+        <div>
+            <Navbar/>
             <div className="row">
                 <div className="col-6">
                     {items.length > 0 ? showItems(items) : noItemsMessage()}
@@ -53,7 +52,7 @@ const Cart = () => {
                     <Checkout products={items} />
                 </div>
             </div>
-        </Layout>
+        </div>
     );
 };
 

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiAdmin";
 import moment from "moment";
 
+import Navbar from '../core/Menu'
+
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [statusValues, setStatusValues] = useState([]);
@@ -92,13 +94,8 @@ const Orders = () => {
     );
 
     return (
-        <Layout
-            title="Orders"
-            description={`G'day ${
-                user.name
-            }, you can manage all the orders here`}
-            className="container-fluid"
-        >
+        <div>
+        <Navbar/>
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     {showOrdersLength()}
@@ -163,7 +160,7 @@ const Orders = () => {
                     })}
                 </div>
             </div>
-        </Layout>
+        </div>
     );
 };
 

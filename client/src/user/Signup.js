@@ -4,6 +4,8 @@ import Layout from "../core/Layout";
 import { signup } from "../auth";
 import "../styles.css";
 
+import Navbar from '../core/Menu'
+
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
@@ -140,15 +142,12 @@ const Signup = () => {
   );
 
   return (
-    <Layout
-      title="Signup"
-      description="Signup to GreenFarm App"
-      className="container col-md-8 offset-md-2"
-    >
+    <div>
+    <Navbar/>
       {showSuccess()}
       {showError()}
       {signUpForm()}
-    </Layout>
+    </div>
   );
 };
 

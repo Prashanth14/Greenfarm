@@ -6,6 +6,8 @@ import Checkbox from "./Checkbox";
 import RadioBox from "./RadioBox";
 import { prices } from "./fixedPrices";
 
+import Navbar from './Menu'
+
 const Shop = () => {
   const [myFilters, setMyFilters] = useState({
     filters: { category: [], price: [] },
@@ -96,13 +98,10 @@ const Shop = () => {
   };
 
   return (
-    <Layout
-      title="Shop Page"
-      description="Search and find Fresh Farm products of your choice"
-      className="container-fluid"
-    >
+    <div>
+    <Navbar/>
       <div className="row">
-        <div className="col-4">
+        <div className="col-3">
           <h4>Filter by categories</h4>
           <ul>
             <Checkbox
@@ -133,7 +132,7 @@ const Shop = () => {
           {loadMoreButton()}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 
