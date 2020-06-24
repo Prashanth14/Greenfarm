@@ -4,6 +4,8 @@ import ShowImage from "./ShowImage";
 import moment from "moment";
 import { addItem, updateItem, removeItem } from "./cartHelpers";
 
+import '../styles.css'
+
 const Card = ({
     product,
     showViewProductButton = true,
@@ -18,7 +20,7 @@ const Card = ({
         return (
             showViewProductButton && (
                 <Link to={`/product/${product._id}`} className="mr-2">
-                    <button className="btn btn-outline-primary mt-2 mb-2">
+                    <button className="viewProduct">
                         View Product
                     </button>
                 </Link>
@@ -43,7 +45,7 @@ const Card = ({
             showAddToCartButton && (
                 <button
                     onClick={addToCart}
-                    className="btn btn-outline-warning mt-2 mb-2"
+                    className="addCart"
                 >
                     Add to cart
                 </button>
@@ -104,13 +106,13 @@ const Card = ({
     return (
         <div className="card">
             <div className="card-header name">{product.name}</div>
-            <div className="card-body">
+            <div className="card-body clr">
                 {shouldRedirect(redirect)}
                 <ShowImage item={product} url="product" />
                 <p className="lead mt-2">
                     {product.description.substring(0, 100)}
                 </p>
-                <p className="black-10">${product.price}</p>
+                <p className="black-10">&#x20B9;{product.price}</p>
                 <p className="black-9">
                     Category: {product.category && product.category.name}
                 </p>

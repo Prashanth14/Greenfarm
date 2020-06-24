@@ -4,6 +4,11 @@ import { getProducts } from "./apiCore";
 import Card from "./Card";
 import Search from "./Search";
 
+import Menu from "./Menu";
+import About from './About'
+import HeroSection from "./HeroSection";
+import Footer from './Footer'
+
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
   const [productsByArrival, setProductsByArrival] = useState([]);
@@ -35,12 +40,11 @@ const Home = () => {
   }, []);
 
   return (
-    <Layout
-      title="Home Page"
-      description="GreenFarm  App"
-      className="container-fluid"
-    >
-      <Search />
+    <div>
+      <Menu /> 
+      <HeroSection />
+      <About/>
+      {/* <Search /> */}
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
         {productsByArrival.map((product, i) => (
@@ -58,7 +62,8 @@ const Home = () => {
           </div>
         ))}
       </div>
-    </Layout>
+      <Footer/>
+    </div>
   );
 };
 
