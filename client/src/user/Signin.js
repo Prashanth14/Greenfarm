@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import Layout from "../core/Layout";
 import { signin, authenticate, isAuthenticated } from "../auth";
 
+import Navbar from '../core/Menu'
+
 const Signin = () => {
   const [values, setValues] = useState({
     email: "manik@gmail.com",
@@ -93,16 +95,13 @@ const Signin = () => {
   };
 
   return (
-    <Layout
-      title="Signin"
-      description="Signin to GreenFarm App"
-      className="container col-md-8 offset-md-2"
-    >
+    <div>
+    <Navbar/>
       {showLoading()}
       {showError()}
       {signUpForm()}
       {redirectUser()}
-    </Layout>
+    </div>
   );
 };
 
