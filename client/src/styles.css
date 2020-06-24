@@ -87,6 +87,51 @@
   animation: Gradient 15s ease infinite;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 0px;
+  max-width: 600px;
+  height: 350px;
+  border: 1px solid #9c9c9c;
+  background-color: #eaeaea;
+}
+
+#register .container #register-row #register-column #register-box {
+  margin-top: 0px;
+  max-width: 600px;
+  height: 475px;
+  border: 1px solid #9c9c9c;
+  background-color: #eaeaea;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+
+#register
+  .container
+  #register-row
+  #register-column
+  #register-box
+  #register-form {
+  padding: 20px;
+}
+
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
+  margin-top: -85px;
+}
+
 @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 50%;

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Layout from "../core/Layout";
 import { signin, authenticate, isAuthenticated } from "../auth";
+import "../styles.css";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "manik@gmail.com",
-    password: "manik2403",
+    email: "",
+    password: "",
     error: "",
     loading: false,
     redirectToReferrer: false,
@@ -37,30 +38,65 @@ const Signin = () => {
   };
 
   const signUpForm = () => (
-    <form>
-      <div className="form-group">
-        <label className="text-muted">Email</label>
-        <input
-          onChange={handleChange("email")}
-          type="email"
-          className="form-control"
-          value={email}
-        />
+    <div id="login">
+      <h3 class="text-center text-white pt-5">Login form</h3>
+      <div class="container">
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" action="" method="post">
+                <h3 class="text-center text-info">Login</h3>
+                <div class="form-group">
+                  <label for="email" class="text-info">
+                    Email:
+                  </label>
+                  <br></br>
+                  <input
+                    onChange={handleChange("email")}
+                    type="email"
+                    className="form-control"
+                    placeholder="Enter Valid Email"
+                    value={email}
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password" class="text-info">
+                    Password:
+                  </label>
+                  <br></br>
+                  <input
+                    onChange={handleChange("password")}
+                    type="password"
+                    className="form-control"
+                    placeholder="Enter Valid Password"
+                    value={password}
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="remember-me" class="text-info">
+                    <span>Remember me</span> 
+                    <span>
+                      <input
+                        id="remember-me"
+                        name="remember-me"
+                        type="checkbox"
+                      />
+                    </span>
+                  </label>
+                </div>
+                <br />
+                <button onClick={clickSubmit} className="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="form-group">
-        <label className="text-muted">Password</label>
-        <input
-          onChange={handleChange("password")}
-          type="password"
-          className="form-control"
-          value={password}
-        />
-      </div>
-      <button onClick={clickSubmit} className="btn btn-primary">
-        Submit
-      </button>
-    </form>
+    </div>
   );
 
   const showError = () => (
