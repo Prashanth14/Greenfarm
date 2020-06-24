@@ -19,6 +19,7 @@ const productSchema = new mongoose.Schema(
       trim: true,
       required: true,
       maxlength: 32,
+      min: 0,
     },
     category: {
       type: ObjectId,
@@ -27,6 +28,7 @@ const productSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
+      min: 0,
     },
     postedBy: {
       type: String,
