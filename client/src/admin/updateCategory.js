@@ -3,6 +3,9 @@ import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link, Redirect } from "react-router-dom";
 import { getCategory, updateCategory } from "./apiAdmin";
+
+import Navbar from '../core/Menu'
+
 // {category: ["5cd0258f2793ec6e100bc191"], price: []}
 // http://localhost:3000/admin/category/update/5cd0258f2793ec6e100bc191
 const UpdateCategory = ({ match }) => {
@@ -130,11 +133,8 @@ const UpdateCategory = ({ match }) => {
   };
 
   return (
-    <Layout
-      title={`Hi ${user.name}`}
-      description={`This is Update Product Action Page`}
-      className="container-fluid"
-    >
+    <div>
+    <Navbar/>
       <div className="row">
         <div className="col-md-8 offset-md-2 m-b-250 mb-5">
           {showError()}
@@ -143,7 +143,7 @@ const UpdateCategory = ({ match }) => {
           {redirectUser()}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

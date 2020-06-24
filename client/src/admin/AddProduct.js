@@ -3,6 +3,9 @@ import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { createProduct, getCategories } from "./apiAdmin";
+
+import Navbar from '../core/Menu'
+
 const AddProduct = () => {
   const [values, setValues] = useState({
     name: "",
@@ -175,10 +178,8 @@ const AddProduct = () => {
       </div>
     );
   return (
-    <Layout
-      title="Add a new product"
-      description={`G'day ${user.name}, ready to add a new product?`}
-    >
+    <div>
+    <Navbar/>
       <div className="row">
         <div className="col-md-8 offset-md-2">
           {showLoading()}
@@ -187,7 +188,7 @@ const AddProduct = () => {
           {newPostForm()}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 export default AddProduct;
