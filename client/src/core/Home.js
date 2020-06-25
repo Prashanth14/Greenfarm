@@ -5,9 +5,9 @@ import Card from "./Card";
 import Search from "./Search";
 
 import Menu from "./Menu";
-import About from './About'
+import About from "./About";
 import HeroSection from "./HeroSection";
-import Footer from './Footer'
+import Footer from "./Footer";
 
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -41,11 +41,11 @@ const Home = () => {
 
   return (
     <div>
-      <Menu /> 
+      <Menu />
       <HeroSection />
-      <About/>
+      <About />
       {/* <Search /> */}
-      <h2 className="mb-4">New Arrivals</h2>
+      <h2 className="mb-4">Fresh Uploads</h2>
       <div className="row">
         {productsByArrival.map((product, i) => (
           <div key={i} className="col-4 mb-3">
@@ -54,7 +54,7 @@ const Home = () => {
         ))}
       </div>
 
-      <h2 className="mb-4">Best Sellers</h2>
+      <h2 className="mb-4">Organic</h2>
       <div className="row">
         {productsBySell.map((product, i) => (
           <div key={i} className="col-4 mb-3">
@@ -62,7 +62,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

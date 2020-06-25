@@ -4,7 +4,7 @@ import Layout from "../core/Layout";
 import { signup } from "../auth";
 import "../styles.css";
 
-import Navbar from '../core/Menu'
+import Navbar from "../core/Menu";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -108,7 +108,7 @@ const Signup = () => {
                       Please select
                     </option>
                     <option value="0">User</option>
-                    <option value="1">Admin</option>
+                    <option value="1">Farmer</option>
                   </select>
                 </div>
                 <br />
@@ -143,7 +143,7 @@ const Signup = () => {
 
   return (
     <div>
-    <Navbar/>
+      <Navbar />
       {showSuccess()}
       {showError()}
       {signUpForm()}
